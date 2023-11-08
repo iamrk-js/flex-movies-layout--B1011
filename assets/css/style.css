@@ -73,32 +73,72 @@ body {
     color: var(--color-primary);
 }
 
-.content-area{
+.content-area {
     flex-direction: column;
 }
 
-.main-content-area{
-    border: 1px solid red;
+.main-content-area {
     padding: 10px;
 }
 
-.sidebar-section{
+.sidebar-section {
     border: 1px solid yellowgreen;
+}
+
+/* css of posts section  */
+.posts {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+
+}
+
+.post {
+    background-color: var(--color-white);
+    margin-bottom: 20px;
+}
+
+.post img {
+    width: 100%;
+    height: 350px;
+    object-fit: cover;
+}
+
+.post-content {
+    transform: translateY(-10px);
+}
+
+.post-content h2 {
+    padding: 20px;
+    text-align: center;
+    background-color: var(--color-primary);
+    text-transform: capitalize;
+    color: var(--color-dark);
+}
+
+.post-content p {
+    padding: 25px;
+    color: var(--color-dark);
 }
 
 
 
-
-
-
-
-
+@media all and (min-width:768px) {
+    .posts{
+        flex-direction: row;
+        justify-content: space-between;
+    }
+    .posts .post{
+        width: 49%;
+    }
+}
 
 
 @media all and (min-width:1180px) {
     .navbar ul {
         display: flex;
     }
+
     .navbar li {
         flex-grow: 1;
     }
@@ -107,12 +147,30 @@ body {
         flex-direction: row;
     }
 
-    .main-content-area{
+    .main-content-area {
         flex-grow: 1;
     }
 
-    .sidebar-section{
+    .sidebar-section {
         /* flex-basis: 400px; */
         flex: 0 0 400px;
+    }
+
+   
+
+    .posts .post:nth-child(1) , 
+    .posts .post:nth-child(2){
+        width: 49%;
+    }
+
+    .posts .post:nth-child(3) , 
+    .posts .post:nth-child(4),
+    .posts .post:nth-child(5)
+    {
+        width: 32%;
+    }
+
+    .posts .post:last-child{
+        width: 100%;
     }
 }
