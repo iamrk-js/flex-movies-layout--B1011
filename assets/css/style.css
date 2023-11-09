@@ -4,12 +4,7 @@
     box-sizing: border-box;
 }
 
-:root {
-    --color-primary: #f6d200;
-    --color-grey: #ededed;
-    --color-dark: #000;
-    --color-white: #fff;
-}
+
 
 @import url('https://fonts.googleapis.com/css2?family=Asap:ital,wght@0,300;0,400;0,700;0,900;1,300&display=swap');
 
@@ -121,15 +116,72 @@ body {
     color: var(--color-dark);
 }
 
+/* css of watch-cards section  */
 
+.watch-card {
+    background-color: var(--color-dark);
+    color: var(--color-white);
+    margin-bottom: 20px;
+    display: flex;
+    flex-direction: column;
+}
+
+.watch-img>img {
+    width: 100%;
+}
+
+.watch-content {
+    padding: 20px;
+    font-weight: bold;
+}
+
+.watch-content h3 {
+    font-weight: 400;
+    text-transform: capitalize;
+    font-size: 32px;
+}
+
+.watch-content h3,
+.watch-content p {
+    margin-bottom: 15px;
+}
+
+.watch-content a {
+    text-decoration: underline;
+    color: var(--color-white);
+}
+
+.watch-content p span {
+    margin-right: 10px;
+    font-size: 22px;
+}
 
 @media all and (min-width:768px) {
-    .posts{
+    .posts {
         flex-direction: row;
         justify-content: space-between;
     }
-    .posts .post{
+
+    .posts .post {
         width: 49%;
+    }
+
+    .watch-card {
+        flex-direction: row;
+    }
+    .watch-img{
+        flex : 0 0 400px
+    }
+    .watch-img>img {
+        height: 100%;
+        object-fit: cover;
+    }
+    .watch-content{
+        align-self: center;
+        padding: 30px;
+    }
+    .watch-card:nth-of-type(even) .watch-img{
+        order: 1;
     }
 }
 
@@ -143,7 +195,7 @@ body {
         flex-grow: 1;
     }
 
-    .content-area{
+    .content-area {
         flex-direction: row;
     }
 
@@ -156,21 +208,20 @@ body {
         flex: 0 0 400px;
     }
 
-   
 
-    .posts .post:nth-child(1) , 
-    .posts .post:nth-child(2){
+
+    .posts .post:nth-child(1),
+    .posts .post:nth-child(2) {
         width: 49%;
     }
 
-    .posts .post:nth-child(3) , 
+    .posts .post:nth-child(3),
     .posts .post:nth-child(4),
-    .posts .post:nth-child(5)
-    {
+    .posts .post:nth-child(5) {
         width: 32%;
     }
 
-    .posts .post:last-child{
+    .posts .post:last-child {
         width: 100%;
     }
 }
