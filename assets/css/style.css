@@ -76,9 +76,7 @@ body {
     padding: 10px;
 }
 
-.sidebar-section {
-    border: 1px solid yellowgreen;
-}
+
 
 /* css of posts section  */
 .posts {
@@ -223,6 +221,66 @@ body {
     align-self: center;
 }
 
+/* movie gallary css   */
+.gallary-imgs {
+    display: flex;
+    flex-wrap: wrap;
+    margin-left: -10px;
+}
+
+.gallary-img {
+    height: 350px;
+    flex-grow: 1;
+    margin: 0 0 10px 10px;
+}
+
+.gallary-img a {
+    display: block;
+    height: 100%;
+}
+
+.gallary-img img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.footer {
+    background-color: var(--color-dark);
+    padding: 20px;
+    text-align: center;
+    color: var(--color-white);
+    font-size: 24px;
+}
+
+/* aside bar section css  */
+.wedget {
+    padding: 10px;
+}
+
+.wedget-card {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 5px;
+    margin-bottom: 20px;
+    text-transform: capitalize;
+}
+
+.wedget-card a:link,
+.wedget-card a:visited {
+    color: var(--color-dark);
+    font-weight: 700;
+    padding-left: 10px;
+}
+
+.wedget-card h3{
+    margin-bottom: 12px;
+}
+
+.wedget-card li{
+    margin-bottom: 5px;
+}
+
 @media all and (min-width:768px) {
     .posts {
         flex-direction: row;
@@ -254,20 +312,55 @@ body {
     .watch-card:nth-of-type(even) .watch-img {
         order: 1;
     }
-    .download-content{
+
+    .download-content {
         flex-direction: row;
     }
+
     .download-info {
         padding: 20px;
         flex-grow: 1;
     }
-    .download-link, .download-rating{
+
+    .download-link,
+    .download-rating {
         flex: 0 0 200px;
+    }
+
+    /*gallary-img 1 5 9 >> 250px*/
+    /*gallary-img 2 6 10 >> 325px*/
+    /*gallary-img 3 7  >> 180px*/
+    /*gallary-img 4 8  >> 420px*/
+    /* .gallary-img:nth-child(1),
+    .gallary-img:nth-child(5),
+    .gallary-img:nth-child(9){
+        flex-basis: 250px;
+    } */
+    /* n >> 0 , 1, 2*/
+
+    .gallary-img:nth-child(4n + 1) {
+        flex-basis: 250px;
+    }
+
+    .gallary-img:nth-child(4n + 2) {
+        flex-basis: 325px;
+    }
+
+    .gallary-img:nth-child(4n + 3) {
+        flex-basis: 180px;
+    }
+
+    .gallary-img:nth-child(4n + 4) {
+        flex-basis: 420px;
     }
 }
 
 
 @media all and (min-width:1180px) {
+    .main-content-area, .wedget {
+        padding: 20px;
+    }
+
     .navbar ul {
         display: flex;
     }
